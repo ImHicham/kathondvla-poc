@@ -1,0 +1,31 @@
+service: Kathondvla-POC
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+    name: aws
+    runtime: nodejs18.x
+    region: eu-west-1
+    environment:
+        BASE_URL: ${env:BASE_URL}
+
+plugins:
+    - serverless-dotenv-plugin
+
+functions:
+    sortedTeasers:
+        events:
+            - http:
+                  path: sorted-teasers
+                  method: get
+        handler: src/handlers/content/sorted-teasers.handler
+        disableLogs: true
+        role: arn:aws:iam::590184085435:role/Kathondvla-POC
+    teasersCount:
+        events:
+            - http:
+                  path: teasers-count
+                  method: get
+        handler: src/handlers/content/teaser-count.handler
+        disableLogs: true
+        role: arn:aws:iam::590184085435:role/Kathondvla-POC

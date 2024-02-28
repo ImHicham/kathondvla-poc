@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "72f0244a-2036-4823-bf8f-3c49440f7be7",
+		"name": "Kathondvla-POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5255459"
+	},
+	"item": [
+		{
+			"name": "/sorted-teasers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/sorted-teasers",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"sorted-teasers"
+					]
+				},
+				"description": "Fetch all teasers that were published within the past 6 months and aren't included in any newsletter: Should return the title and the issued date of the Teasers ordered by most recent publication date."
+			},
+			"response": []
+		},
+		{
+			"name": "/teasers-count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/teasers-count",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"teasers-count"
+					]
+				},
+				"description": "Fetch all teasers that were published within the past 6 months and aren't included in any newsletter: Should return a JSON including the count of the teasers that are not only meant for schools."
+			},
+			"response": []
+		}
+	]
+}
